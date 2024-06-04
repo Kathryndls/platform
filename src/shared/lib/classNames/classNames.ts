@@ -7,8 +7,7 @@ export function classNames(className: string, mods: Mods, additional: string[]):
         ...additional,
         ...Object.entries(mods)
             .filter(([className, value]) => Boolean(value))
-            .map(([className, value]) => className)
+            .map(([className]) => className)
     ]
         .join(' ')
-
 }
