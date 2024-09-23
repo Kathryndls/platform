@@ -14,25 +14,25 @@ export default {
     // cacheDirectory: "C:\\Users\\Kathryn\\AppData\\Local\\Temp\\jest",
 
     // Automatically clear mock calls, instances and results before every test
-    clearMocks: true,
-    testEnvironment: 'jsdom',
-    coveragePathIgnorePatterns: [
+    'clearMocks': true,
+    'testEnvironment': 'jsdom',
+    'coveragePathIgnorePatterns': [
         '\\\\node_modules\\\\',
     ],
-    coverageReporters: [
+    'coverageReporters': [
         'json',
         'text',
         'lcov',
         'clover',
     ],
-    moduleDirectories: [
+    'moduleDirectories': [
         'node_modules',
     ],
-    rootDir: '../../',
-    testMatch: [
+    'rootDir': '../../',
+    'testMatch': [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
-    transform: {
+    'transform': {
         '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     },
 
