@@ -3,5 +3,8 @@
   "Translate": "Переклад",
   "Main Page": "Головна сторінка",
   "Language": "Українська",
-  "Page not found": "Сторінка не знайдена"
+  "Page not found": "Сторінка не знайдена",
+  "An error has occurred": "Виявлена помилка",
+  "Update the page": "Оновити сторінку",
+  "Throw Error": "Відобразити помилку"
 }

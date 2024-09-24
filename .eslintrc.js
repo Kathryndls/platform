@@ -45,6 +45,8 @@ module.exports = {
         'quote-props': 'off',
         'number-max-precision': 'off',
         'no-unused-vars': 'off',
+        'react/button-has-type': 'off',
+        'react/destructuring-assignment': 'off',
     },
     globals: {
         __IS_DEV__: true,

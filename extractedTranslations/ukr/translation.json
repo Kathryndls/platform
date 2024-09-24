@@ -1,6 +1,9 @@
 {
   "About": "About",
+  "An error has occurred": "An error has occurred",
   "Language": "Language",
   "Main Page": "Main Page",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Throw Error": "Throw Error",
+  "Update the page": "Update the page"
 }
