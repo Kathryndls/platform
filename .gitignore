@@ -1,3 +1,35 @@
-/build
-node_modules
-.idea
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Bui# Node.js
+     #node_modules/
+     #npm-debug.log*
+     #yarn-debug.log*
+     #yarn-error.log*
+     #
+     ## Build output
+     #dist/
+     #build/
+     #
+     ## IDE directories
+     #.idea/
+     #.vscode/
+     #
+     ## Miscellaneous
+     #*.log
+     #*.env
+     #.DS_Store  # для macOS (если вы или другие участники используете macOS)ld output
+dist/
+build/
+
+# IDE directories
+.idea/
+.vscode/
+
+# Miscellaneous
+*.log
+*.env
+.DS_Store  # для macOS (если вы или другие участники используете macOS)

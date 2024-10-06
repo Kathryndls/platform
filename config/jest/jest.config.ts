@@ -14,27 +14,54 @@ export default {
     // cacheDirectory: "C:\\Users\\Kathryn\\AppData\\Local\\Temp\\jest",
 
     // Automatically clear mock calls, instances and results before every test
-    'clearMocks': true,
-    'testEnvironment': 'jsdom',
-    'coveragePathIgnorePatterns': [
-        '\\\\node_modules\\\\',
+    clearMocks: true,
+    testEnvironment: "jsdom",
+    coveragePathIgnorePatterns: [
+        "\\\\node_modules\\\\"
     ],
-    'coverageReporters': [
+    moduleFileExtensions: [
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node"
+    ],
+    coverageReporters: [
         'json',
         'text',
         'lcov',
         'clover',
     ],
-    'moduleDirectories': [
-        'node_modules',
+    moduleDirectories: [
+        "node_modules",
+        // "src"
     ],
-    'rootDir': '../../',
-    'testMatch': [
+    moduleNameMapper: {
+        '\\.scss$': '<rootDir>/emptyModule.js',
+        '\\.(scss|less|css)$': 'identity-obj-proxy',
+        '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
+        '@app/(.*)': '<rootDir>/src/app/$1',
+        '@shared/(.*)': '<rootDir>/src/shared/$1',
+        '@pages/(.*)': '<rootDir>/src/pages/$1',
+        '@widgets/(.*)': '<rootDir>/src/widgets/$1',
+    },
+    testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
-    'transform': {
+    modulePaths: [
+        '<rootDir>src'
+    ],
+    rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
+    transform: {
         '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+        '^.+\\.(css|scss)$': 'jest-transform-css',
     },
+    // moduleNameMapper: {
+    //     '^shared/(.*)$': '<rootDir>/src/shared/$1',
+    //     '\\.(scss|less|css)$': 'identity-obj-proxy',
+    // },
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
