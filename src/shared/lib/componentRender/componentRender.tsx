@@ -11,6 +11,7 @@ export function componentRender(component: ReactNode, options: componentRenderOp
     const {
         route = '/',
     } = options;
+    /* eslint-disable react/jsx-no-useless-fragment */
 
     return <></>;
     // return render(

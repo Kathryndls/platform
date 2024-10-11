@@ -11,7 +11,7 @@ export function renderWithRouter(component: ReactNode, options: renderWithRouter
     const {
         route,
     } = options;
-
+    /* eslint-disable react/jsx-no-useless-fragment */
     return <></>;
 }
 
