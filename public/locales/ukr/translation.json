@@ -2,10 +2,12 @@
   "Test Example": "Тестовый приклад",
   "Translate": "Переклад",
   "Main Page": "Головна сторінка",
+  "About": "Про нас",
   "Language": "Українська",
   "Page not found": "Сторінка не знайдена",
   "An error has occurred": "Виявлена помилка",
   "Update the page": "Оновити сторінку",
   "Throw Error": "Відобразити помилку",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Cut": "Укр"
 }

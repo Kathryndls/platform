@@ -49,6 +49,7 @@ module.exports = {
         'react/destructuring-assignment': 'off',
         'no-console': 'off',
         'no-param-reassign': 'off',
+        'no-undef': 'off', //связано с и18н тесты
     },
     globals: {
         __IS_DEV__: true,
