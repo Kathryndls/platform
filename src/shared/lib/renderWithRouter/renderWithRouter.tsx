@@ -12,11 +12,12 @@ export function renderWithRouter(component: ReactNode, options: renderWithRouter
         route,
     } = options;
 
-    return render(
-        <MemoryRouter i18n={i18nForTests}>
-            <I18nextProvider i18n={i18nForTests}>
-                {component}
-            </I18nextProvider>
-        </MemoryRouter>,
-    );
+    return <></>;
 }
+
+// render(
+// <MemoryRouter i18n={i18nForTests}>
+//     <I18nextProvider i18n={i18nForTests}>
+//         {component}
+//     </I18nextProvider>
+// </MemoryRouter>,
