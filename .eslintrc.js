@@ -47,6 +47,8 @@ module.exports = {
         'no-unused-vars': 'off',
         'react/button-has-type': 'off',
         'react/destructuring-assignment': 'off',
+        'no-console': 'off',
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,
