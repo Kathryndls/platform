@@ -19,6 +19,7 @@ module.exports = {
     },
     plugins: [
         'react',
+        'react-hooks',
         '@typescript-eslint',
         'i18n',
     ],
@@ -49,9 +50,20 @@ module.exports = {
         'react/destructuring-assignment': 'off',
         'no-console': 'off',
         'no-param-reassign': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
         'no-undef': 'off', //связано с и18н тесты
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off'
+            },
+        },
+    ],
 };
