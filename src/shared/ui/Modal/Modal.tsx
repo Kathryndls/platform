@@ -1,8 +1,10 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
+import React, {
+    ReactNode, useCallback, useEffect, useRef, useState,
+} from 'react';
+import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
-import React, {ReactNode, useCallback, useEffect, useRef, useState} from "react";
-import {Portal} from "shared/ui/Portal/Portal";
-import {useTheme} from "app/providers/ThemeProvider";
 
 interface ModalProps {
     className?: string;
@@ -23,49 +25,59 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     const closeHandler = useCallback(() => {
-        if ( onClose ) {
+        if (onClose) {
             setIsClosing(true);
             timerRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
-    },[onClose]);
+    }, [onClose]);
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
+        if (e.key === 'Escape') {
             closeHandler();
         }
     }, [closeHandler]);
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
-    }
+    };
 
     useEffect(() => {
         if (isOpen) {
-            window.addEventListener('keydown', onKeyDown)
+            window.addEventListener('keydown', onKeyDown);
         }
         return () => {
             clearTimeout(timerRef.current);
-            window.removeEventListener("keydown", onKeyDown);
-        }
-    },[isOpen, onKeyDown])
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isOpen, onKeyDown]);
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
         [cls[theme]]: true,
-    }
+    };
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
+            <div className={classNames(cls.Modal, mods, [className])} role="dialog" aria-modal="true">
+                <div className={cls.overlay} onClick={closeHandler} role="button" tabIndex={0} onKeyDown={closeHandler}>
+                    <div
+                        className={cls.content}
+                        onClick={onContentClick}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                onContentClick(e);
+                            }
+                        }}
+                    >
                         {children}
                     </div>
                 </div>
