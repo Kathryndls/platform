@@ -47,6 +47,12 @@ export const Modal = (props: ModalProps) => {
         e.stopPropagation();
     };
 
+    const onOverlayKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            closeHandler();
+        }
+    };
+
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
@@ -66,17 +72,23 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])} role="dialog" aria-modal="true">
-                <div className={cls.overlay} onClick={closeHandler} role="button" tabIndex={0} onKeyDown={closeHandler}>
+                <div
+                    className={cls.overlay}
+                    onClick={closeHandler}
+                    onKeyDown={onOverlayKeyDown}
+                    role="button"
+                    tabIndex={0} // Делает элемент доступным для фокуса
+                >
                     <div
                         className={cls.content}
                         onClick={onContentClick}
-                        role="button"
-                        tabIndex={0}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ') {
-                                onContentClick(e);
+                                onContentClick(e as unknown as React.MouseEvent); // Приведение типа
                             }
                         }}
+                        role="button"
+                        tabIndex={0} // Делает элемент доступным для фокуса
                     >
                         {children}
                     </div>
