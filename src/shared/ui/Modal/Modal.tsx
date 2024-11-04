@@ -77,18 +77,18 @@ export const Modal = (props: ModalProps) => {
                     onClick={closeHandler}
                     onKeyDown={onOverlayKeyDown}
                     role="button"
-                    tabIndex={0} // Делает элемент доступным для фокуса
+                    tabIndex={0}
                 >
                     <div
                         className={cls.content}
                         onClick={onContentClick}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ') {
-                                onContentClick(e as unknown as React.MouseEvent); // Приведение типа
+                                onContentClick(e as unknown as React.MouseEvent);
                             }
                         }}
                         role="button"
-                        tabIndex={0} // Делает элемент доступным для фокуса
+                        tabIndex={0}
                     >
                         {children}
                     </div>
