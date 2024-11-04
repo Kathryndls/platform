@@ -1,7 +1,9 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 
-const AboutPage = () => {
+interface AboutPageProps {}
+
+const AboutPage: React.FC<AboutPageProps>  = () => {
     const {t} = useTranslation('about');
 
     return (
