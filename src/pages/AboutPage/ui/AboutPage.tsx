@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 
 interface AboutPageProps {}
 
-const AboutPage: React.FC<AboutPageProps>  = () => {
+const AboutPage: React.FC<AboutPageProps> = () => {
     const {t} = useTranslation('about');
 
     return (
