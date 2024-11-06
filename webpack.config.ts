@@ -1,5 +1,5 @@
-import webpack from 'webpack';
-import path from 'path';
+import * as path from 'path';
+import webpack = require('webpack');
 import {buildWebpackConfig} from './config/build/buildWebpackConfig';
 import {BuildEnv, BuildPaths} from './config/build/types/config';
 
@@ -22,6 +22,10 @@ export default (env: BuildEnv) => {
         isDev,
         'port': PORT,
     });
+
+    config.performance = {
+        hints: false,  // Отключаем предупреждения о размере ассетов
+    };
 
     return config;
 };
