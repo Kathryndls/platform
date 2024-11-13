@@ -11,5 +11,8 @@
   "toggle": "toggle",
   "Cut": "Укр",
   "enter username": "Введіть імʼя",
-  "enter password": "Введіть пароль"
+  "enter password": "Введіть пароль",
+  "enter": "enter",
+  "Authorization form": "Форма авторизації",
+  "Wrong password": "Невірний пароль"
 }

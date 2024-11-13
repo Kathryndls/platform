@@ -1,14 +1,21 @@
 {
   "About": "About",
   "An error has occurred": "An error has occurred",
+  "Authorization form": "Authorization form",
   "Enter": "Enter",
+  "Exit": "Exit",
+  "Form autorisation": "Form autorisation",
   "Language": "Language",
   "Main Page": "Main Page",
   "Page not found": "Page not found",
   "Throw Error": "Throw Error",
   "Update the page": "Update the page",
+  "Wrong password": "Wrong password",
   "decrement": "decrement",
   "enter": "enter",
   "increment": "increment",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Введите username": "Введите username",
+  "Введите пароль": "Введите пароль",
+  "Войти": "Войти"
 }

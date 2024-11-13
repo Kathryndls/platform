@@ -10,5 +10,8 @@
   "toggle": "toggle",
   "Cut": "Eng",
   "enter username": "enter user name",
-  "enter password": "enter password"
+  "enter password": "enter password",
+  "enter": "enter",
+  "Authorization form": "Authorization form",
+  "Wrong password": "Wrong password"
 }
