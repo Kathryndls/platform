@@ -2,8 +2,8 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import React, {useCallback, useState} from 'react';
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
+import {LoginModal} from 'features/AuthByForm';
 import cls from './Navbar.module.scss';
-import {LoginModal} from "features/AuthByForm";
 
 interface NavbarProps {
     className?: string;
@@ -31,7 +31,7 @@ export const Navbar = ({className}: NavbarProps) => {
             >
                 {t('Enter')}
             </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>
+            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         </div>
     );
 };

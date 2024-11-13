@@ -1,8 +1,8 @@
 import {classNames} from 'shared/lib/classNames/classNames';
-import cls from './LoginForm.module.scss';
-import {useTranslation} from "react-i18next";
-import {Input} from "shared/ui/Input/Input";
+import {useTranslation} from 'react-i18next';
+import {Input} from 'shared/ui/Input/Input';
 import { Button } from 'shared/ui/Button/Button';
+import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
     className?: string;
@@ -17,12 +17,12 @@ export const LoginForm = ({className}: LoginFormProps) => {
                 autoFocus
                 type="text"
                 className={cls.input}
-                placeholder={'enter username'}
+                placeholder="enter username"
             />
             <Input
                 type="text"
                 className={cls.input}
-                placeholder={'enter password'}
+                placeholder="enter password"
             />
 
             <Button className={cls.loginBtn}>
