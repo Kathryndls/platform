@@ -1,8 +1,8 @@
 import * as webpack from 'webpack';
 import {DefinePlugin, RuleSetRule} from 'webpack';
+import path = require('path');
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
-import path = require("path");
 
 export default ({ config }: {config: webpack.Configuration}) => {
     const paths: BuildPaths = {
@@ -11,7 +11,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
     };
-    config.resolve.modules = [ paths.src, "node_modules" ];
+    config.resolve.modules = [paths.src, 'node_modules'];
     config.resolve.extensions.push('.ts', '.tsx');
 
     config.module.rules = config.module.rules.map((rule: RuleSetRule) => {

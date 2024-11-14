@@ -92,7 +92,7 @@ OutlineSizeXL.args = {
 };
 
 export const Disabled = Template.bind({});
-Disabled .args = {
+Disabled.args = {
     children: '>',
     theme: ThemeButton.OUTLINE,
     disabled: true,

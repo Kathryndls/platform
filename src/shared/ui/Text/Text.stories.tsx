@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {Theme} from 'app/providers/ThemeProvider';
 import {Text, TextTheme} from './Text';
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import {Theme} from "app/providers/ThemeProvider";
 
 export default {
     title: 'shared/Text',
@@ -11,12 +11,12 @@ export default {
     },
 } as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args}/>;
+const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
     title: 'Title lorem ipsum',
-    text: 'Description Description Description'
+    text: 'Description Description Description',
 };
 
 export const Error = Template.bind({});
@@ -32,13 +32,13 @@ OnlyTitle.args = {
 
 export const OnlyText = Template.bind({});
 OnlyText.args = {
-    text: 'Description Description Description'
+    text: 'Description Description Description',
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     title: 'Title lorem ipsum',
-    text: 'Description Description Description'
+    text: 'Description Description Description',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -50,6 +50,6 @@ OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OnlyTextDark = Template.bind({});
 OnlyTextDark.args = {
-    text: 'Description Description Description'
+    text: 'Description Description Description',
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];

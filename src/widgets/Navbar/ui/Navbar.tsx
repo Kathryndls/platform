@@ -3,9 +3,9 @@ import {useTranslation} from 'react-i18next';
 import React, {useCallback, useState} from 'react';
 import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUsername';
+import {useDispatch, useSelector} from 'react-redux';
+import {getUserAuthData, userActions} from 'entities/User';
 import cls from './Navbar.module.scss';
-import {useDispatch, useSelector} from "react-redux";
-import {getUserAuthData, userActions} from "entities/User";
 
 interface NavbarProps {
     className?: string;
@@ -17,7 +17,6 @@ export const Navbar = ({className}: NavbarProps) => {
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
-
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
@@ -27,11 +26,11 @@ export const Navbar = ({className}: NavbarProps) => {
     }, []);
 
     const onLogout = useCallback(() => {
-        dispatch(userActions.logout())
-    }, []);
+        dispatch(userActions.logout());
+    }, [dispatch]);
 
     if (authData) {
-        return(
+        return (
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <Button
                     theme={ThemeButton.CLEAR_INVERTED}
@@ -41,7 +40,7 @@ export const Navbar = ({className}: NavbarProps) => {
                     {t('Exit')}
                 </Button>
             </div>
-        )
+        );
     }
 
     return (
