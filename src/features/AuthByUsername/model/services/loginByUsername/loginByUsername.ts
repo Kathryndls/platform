@@ -15,7 +15,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
             const response = await axios.post<User>('http://localhost:8000/login', authData);
 
             if (!response.data) {
-                return thunkAPI.rejectWithValue('No data in response');
+                return thunkAPI.rejectWithValue('error');
             }
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));

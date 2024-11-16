@@ -16,6 +16,10 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             'path': paths.build,
             'clean': true,
         },
+        'performance': {
+            'maxAssetSize': 300000000, // Лимит на размер отдельного файла
+            'maxEntrypointSize': 3000000000, // Лимит на общий размер точки входа
+        },
         'plugins': buildPlugins(options),
         'module': {
             'rules': buildLoaders(options),
