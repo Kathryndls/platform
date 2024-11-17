@@ -1,8 +1,8 @@
-import {DeepPartial} from "@reduxjs/toolkit";
-import {StateSchema} from "app/providers/StoreProvider";
-import {getLoginUserName} from "./getLoginUserName";
+import {DeepPartial} from '@reduxjs/toolkit';
+import {StateSchema} from 'app/providers/StoreProvider';
+import {getLoginUserName} from './getLoginUserName';
 
-describe('getLoginUserName.test',() => {
+describe('getLoginUserName.test', () => {
     test('should return password', () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: {

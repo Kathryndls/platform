@@ -1,5 +1,7 @@
-import {AnyAction, combineReducers, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
-import {ReducerManager, StateSchema, StateSchemaKey} from "./StateSchema";
+import {
+    AnyAction, combineReducers, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
+import {ReducerManager, StateSchema, StateSchemaKey} from './StateSchema';
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
     const reducers = { ...initialReducers };
@@ -12,36 +14,36 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         getReducerMap: () => reducers,
         reduce: (state:StateSchema, action: AnyAction) => {
             if (keysToRemove.length > 0) {
-                state = { ...state }
-                keysToRemove.map((key) => {
-                    delete state[key]
-                })
-                keysToRemove = []
+                state = { ...state };
+                keysToRemove.forEach((key) => {
+                    delete state[key];
+                });
+                keysToRemove = [];
             }
 
-            return combinedReducer(state, action)
+            return combinedReducer(state, action);
         },
 
         add: (key: StateSchemaKey, reducer: Reducer) => {
             if (!key || reducers[key]) {
-                return
+                return;
             }
 
-            reducers[key] = reducer
+            reducers[key] = reducer;
 
-            combinedReducer = combineReducers(reducers)
+            combinedReducer = combineReducers(reducers);
         },
 
-        remove:(key: StateSchemaKey) => {
+        remove: (key: StateSchemaKey) => {
             if (!key || !reducers[key]) {
-                return
+                return;
             }
 
-            delete reducers[key]
+            delete reducers[key];
 
-            keysToRemove.push(key)
+            keysToRemove.push(key);
 
-            combinedReducer = combineReducers(reducers)
-        }
-    }
+            combinedReducer = combineReducers(reducers);
+        },
+    };
 }

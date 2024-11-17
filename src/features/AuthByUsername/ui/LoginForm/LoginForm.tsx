@@ -5,22 +5,22 @@ import {Button, ThemeButton} from 'shared/ui/Button/Button';
 import {memo, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
+import {DynamicLoaderModel, ReducersList} from 'shared/lib/component/DynamicLoaderModel/DynamicLoaderModel';
 import cls from './LoginForm.module.scss';
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
-import {getLoginUserName} from "../../model/selectors/getLoginUserName/getLoginUserName";
-import {getLoginError} from "../../model/selectors/getLoginError/getLoginError";
-import {getLoginPassword} from "../../model/selectors/getLoginPassword/getLoginPassword";
-import {getLoginIsLoading} from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import {DynamicLoaderModel, ReducersList} from "shared/lib/component/DynamicLoaderModel/DynamicLoaderModel";
+import {getLoginUserName} from '../../model/selectors/getLoginUserName/getLoginUserName';
+import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
+import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
+import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 
 export interface LoginFormProps {
     className?: string;
 }
 
 const initialReducers: ReducersList = {
-     loginForm: loginReducer
-}
+    loginForm: loginReducer,
+};
 
 const LoginForm = memo(({className}: LoginFormProps) => {
     const {t} = useTranslation();

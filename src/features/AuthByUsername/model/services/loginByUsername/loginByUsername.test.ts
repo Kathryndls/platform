@@ -1,7 +1,7 @@
-import axios from "axios";
-import {loginByUsername} from "./loginByUsername";
-import { userActions } from "entities/User";
-import {TestAsyncThunk} from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import axios from 'axios';
+import { userActions } from 'entities/User';
+import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import {loginByUsername} from './loginByUsername';
 
 jest.mock('axios');
 
@@ -33,8 +33,7 @@ describe('loginByUsername.test', () => {
         expect(result.payload).toBe('error');
     });
 
-
-    //!tests s writes without hook TestAsyncThunk. Just clear jest axios/async tests
+    //! tests s writes without hook TestAsyncThunk. Just clear jest axios/async tests
 
     // let dispatch: Dispatch;
     // let getState: () => StateSchema;

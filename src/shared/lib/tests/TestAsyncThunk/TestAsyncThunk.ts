@@ -1,11 +1,13 @@
-import {AsyncThunkAction} from "@reduxjs/toolkit";
-import {StateSchema} from "app/providers/StoreProvider";
+import {AsyncThunkAction} from '@reduxjs/toolkit';
+import {StateSchema} from 'app/providers/StoreProvider';
 
 type ActionCreatorType<Return, Arg, RejectValue> = (arg: Arg) => AsyncThunkAction<Return, Arg, {rejectValue: RejectValue}>;
 
 export class TestAsyncThunk<Return, Arg, RejectedValue> {
     dispatch: jest.MockedFn<any>;
+
     getState: () => StateSchema;
+
     actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 
     constructor(actionCreator: ActionCreatorType<Return, Arg, RejectedValue>) {
