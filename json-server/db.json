@@ -25,5 +25,13 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Kathryn",
+    "lastname": "Dls",
+    "age": 22,
+    "currency": "Euro",
+    "city": "Kiev",
+    "username": "admin",
+    "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcreator.nightcafe.studio%2Fcreation%2F5GKHIrxxMYCgv56ebLo0&psig=AOvVaw0lZKV2Bnix_8W8XyxJupv5&ust=1731926487889000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDQ8ZeX44kDFQAAAAAdAAAAABAE"
+  }
 }
