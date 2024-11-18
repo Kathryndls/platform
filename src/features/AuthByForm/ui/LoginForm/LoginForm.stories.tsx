@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Text',
+    className: 'example-class'
 };

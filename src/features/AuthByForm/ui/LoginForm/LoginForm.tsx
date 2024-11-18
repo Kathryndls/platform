@@ -17,12 +17,12 @@ export const LoginForm = ({className}: LoginFormProps) => {
                 autoFocus
                 type="text"
                 className={cls.input}
-                placeholder="enter username"
+                placeholder={t('enter username')}
             />
             <Input
                 type="text"
                 className={cls.input}
-                placeholder="enter password"
+                placeholder={t('enter password')}
             />
 
             <Button className={cls.loginBtn}>
