@@ -1,9 +1,3 @@
-export enum Currency {
-    'UAN' = 'UAN',
-    'EUR' = 'EUR',
-    'USD' = 'USD',
-}
-
 export enum Country {
     'Ukraine' = 'Ukraine',
     'Polish' = 'Polish',

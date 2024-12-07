@@ -17,5 +17,7 @@
   "Wrong password": "Невірний пароль",
   "There was an error loading profile": "Виникла проблема при загрузці сторінки",
   "Try the reloading the page": "Спробуйте перезавантажити сторінку",
-  "Cancel": "Відмінити"
+  "Cancel": "Відмінити",
+  "Enter value": "Введіть значення",
+  "Enter country": "Введіть країну"
 }

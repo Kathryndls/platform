@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import {Text} from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hook/useAppDispatch/useAppDispatch';
 
@@ -18,12 +18,17 @@ export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
     const readonly = useSelector(getProfileReadonly);
 
     const dispatch = useAppDispatch();
+
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false));
     }, [dispatch]);
 
     const onCancelEdit = useCallback(() => {
-        dispatch(profileActions.setReadonly(true));
+        dispatch(profileActions.cancelEdit());
+    }, [dispatch]);
+
+    const onSave = useCallback(() => {
+        dispatch(updateProfileData());
     }, [dispatch]);
 
     return (
@@ -39,13 +44,22 @@ export const ProfilePageHeader = ({className}: ProfilePageHeaderProps) => {
                         {t('Edit')}
                     </Button>
                 ) : (
-                    <Button
-                        onClick={onCancelEdit}
-                        className={cls.editBtn}
-                        theme={ThemeButton.OUTLINE}
-                     >
-                        {t('Cancel')}
-                </Button>
+                    <>
+                        <Button
+                            onClick={onCancelEdit}
+                            className={cls.editBtn}
+                            theme={ThemeButton.OUTLINE_RED}
+                        >
+                            {t('Cancel')}
+                        </Button>
+                        <Button
+                            onClick={onSave}
+                            className={cls.saveBtn}
+                            theme={ThemeButton.OUTLINE}
+                        >
+                            {t('Save')}
+                        </Button>
+                    </>
                 )}
         </div>
     );

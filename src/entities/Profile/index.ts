@@ -13,6 +13,10 @@ export {
 } from './model/services/fetchProfileData/fetchProfileData';
 
 export {
+    updateProfileData,
+} from './model/services/updateProfileData/updateProfileData';
+
+export {
     ProfileCard,
 } from './ui/ProfileCard/ProfileCard';
 
@@ -20,3 +24,4 @@ export {getProfileIsLoading} from './model/selectors/getProfileIsLoading/getProf
 export {getProfileError} from './model/selectors/getProfileError/getProfileError';
 export {getProfileData} from './model/selectors/getProfileData/getProfileData';
 export {getProfileReadonly} from './model/selectors/getProfileReadonly/getProfileReadonly';
+export {getProfileForm} from './model/selectors/getProfileForm/getProfileForm';
