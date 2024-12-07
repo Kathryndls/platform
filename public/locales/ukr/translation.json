@@ -14,5 +14,8 @@
   "enter password": "Введіть пароль",
   "enter": "enter",
   "Authorization form": "Форма авторизації",
-  "Wrong password": "Невірний пароль"
+  "Wrong password": "Невірний пароль",
+  "There was an error loading profile": "Виникла проблема при загрузці сторінки",
+  "Try the reloading the page": "Спробуйте перезавантажити сторінку",
+  "Cancel": "Відмінити"
 }
