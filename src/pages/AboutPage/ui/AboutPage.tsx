@@ -8,7 +8,7 @@ const AboutPage: React.FC<AboutPageProps> = memo(() => {
 
     return (
         <div>
-            {t('About')}
+            {t('About test ')}
         </div>
     );
 });
